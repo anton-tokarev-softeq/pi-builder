@@ -23,6 +23,9 @@ RUN pacman --noconfirm --ask=4 -Syy \
 		openssl-1.1 \
 	&& pacman --needed --noconfirm --ask=4 -S \
 		pacman \
+		libassuan \
+		gnupg \
+		pinentry \
 	&& pacman-db-upgrade \
 	&& pacman-key --init \
 	&& pacman --needed --noconfirm --ask=4 -S \
