@@ -29,7 +29,7 @@ CFG_FILE ?= config.mk
 export SUDO ?= sudo
 export DOCKER ?= docker
 export DOCKER_RUN_TTY ?= $(DOCKER) run --rm --privileged --tty
-export DOCKER_RUN_INT ?= $(DOCKER) run --rm --privileged --interactive
+export DOCKER_RUN_INT ?= $(DOCKER) run --rm -v /dev:/dev --privileged --interactive
 
 export NC ?=
 
