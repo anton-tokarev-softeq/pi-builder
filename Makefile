@@ -216,6 +216,7 @@ _buildctx: | clean base qemu
 	#
 	cp -a stages/common $(_BUILD_DIR)/stages
 	cp -a stages/$(OS)/* $(_BUILD_DIR)/stages
+	cp -a stages/custom/* $(_BUILD_DIR)/stages
 	sed -i -e 's|%ADD_BASE_ROOTFS_TGZ%|ADD $(_OS_BOARD_ARCH).tgz /|g' $(_init)
 	test $(ARCH) != $(__HOST_ARCH) \
 		&& sed -i -e 's|%COPY_QEMU_USER_STATIC%|COPY qemu-$(ARCH)-static* /usr/bin/|g' $(_init) \
